@@ -3,14 +3,20 @@ Feature: Post user on reqres
   Background:
     * url "https://reqres.in"
     * path  "/api/users"
-   # * request  { "name": "Daniel", "job": "QA Enginner" }
+    * request  { "name": "#(name)", "job": "#(job)" }
 
 
-  Scenario: Pos  a new  user into reqres
-    * def var = { "name": "Daniel", "job": "QA Enginner" }
-    And request var
+  Scenario Outline: Pos  a new  user into reqres
+
     When method post
     Then status 201
+
+    Examples:
+
+      | name   | job        |
+      | Daniel | Trabajador |
+      | David  | Jefe       |
+      | Andres | Gerente    |
 
 
   Scenario: Pos  a new  user into reqres
