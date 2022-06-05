@@ -11,3 +11,16 @@ repositories {
 dependencies{
         testImplementation 'com.intuit.karate:karate-junit5:1.2.0.RC5'
 }
+
+test{
+    useJUnitPlatform()
+}
+
+sourceSets{
+    test{
+        resources{
+            srcDir file('src/test/java')
+            exclude '**/*.java'
+        }
+    }
+}

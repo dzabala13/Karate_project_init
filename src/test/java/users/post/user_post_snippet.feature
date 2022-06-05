@@ -1,3 +1,4 @@
+@ignore
 Feature: Reusable scenarie for post and then delete the same user
 
 
